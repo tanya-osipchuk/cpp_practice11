@@ -1,0 +1,37 @@
+#include <string> 
+#include <iostream>
+#include <map>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+class Animal {
+public:
+	string name, feature, sound;
+	Animal(string _name) : name(_name), feature(""), sound("") {}
+
+	string get_sound() {
+		return sound;
+	}
+	string get_action() {
+		return feature;
+	}
+};
+
+class Farm_Animal : public Animal {
+public:
+	Farm_Animal(string _name) :Animal(_name) {};
+	vector <string> resource;
+	void get_resource(string res) {
+		for (int i = 0; i < resource.size(); i++) {
+			if (resource[i] == res) {
+				cout << "string: " << res << endl;
+				return;
+			}
+		}
+		cout << "string didn't find " << endl;
+	}
+};
+int main() {
+	return 0;
+}
